@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoa Chính trị, Tâm lý và Giáo dục thể chất</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #FF6B6B;
+            --secondary: #4ECDC4;
+            --accent: #FFD166;
+            --light: #F7F9FC;
+            --dark: #292F36;
+            --text: #3D405B;
+            --highlight: #FF9F1C;
+            --pastel-blue: #A0D2EB;
+            --pastel-green: #C1FBA4;
+            --pastel-yellow: #FFEF9F;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            color: var(--dark);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.03);
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            background: var(--pastel-yellow);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.2);
+        }
+        
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+        
+        .logo-text span {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .logo-text span::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+        
+        nav a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.7rem 1.2rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        nav a:hover {
+            background: var(--pastel-yellow);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 209, 102, 0.3);
+        }
+        
+        nav a.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(255, 214, 102, 0.2) 0%, rgba(78, 205, 196, 0.2) 100%), url('https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 8rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.2;
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .hero h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: var(--accent);
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .hero p {
+            font-size: 1.4rem;
+            margin-bottom: 3rem;
+            color: var(--text);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 500;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 7px 20px rgba(255, 107, 107, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 107, 107, 0.6);
+            background: #ff5252;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+        
+        .btn:hover::after {
+            transform: translateX(100%);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            color: var(--dark);
+            margin-left: 20px;
+            box-shadow: 0 7px 20px rgba(255, 209, 102, 0.4);
+        }
+        
+        .btn-accent:hover {
+            background: #ffc845;
+            box-shadow: 0 10px 25px rgba(255, 209, 102, 0.6);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 6rem 0;
+            background-color: white;
+            position: relative;
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f5f7fa" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,192C672,181,768,139,864,128C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center/cover;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            color: var(--primary);
+            font-size: 2.5rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 6px;
+            background: var(--accent);
+            margin: 1.2rem auto;
+            border-radius: 3px;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1;
+            padding: 30px;
+            background: var(--light);
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 10px solid white;
+            transform: rotate(3deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover {
+            transform: rotate(0deg) scale(1.03);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.1);
+        }
+        
+        /* Departments Section */
+        .departments {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom, #f0f9ff, #e6f7ff);
+            position: relative;
+        }
+        
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+        }
+        
+        .dept-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.5s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .dept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-green));
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: -1;
+        }
+        
+        .dept-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+        
+        .dept-card:hover::before {
+            opacity: 0.1;
+        }
+        
+        .dept-img {
+            height: 240px;
+            overflow: hidden;
+        }
+        
+        .dept-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .dept-card:hover .dept-img img {
+            transform: scale(1.15);
+        }
+        
+        .dept-content {
+            padding: 2.5rem;
+            position: relative;
+        }
+        
+        .dept-content h3 {
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            font-size: 1.8rem;
+        }
+        
+        .dept-icon {
+            position: absolute;
+            top: -30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--dark);
+            box-shadow: 0 10px 20px rgba(255, 209, 102, 0.4);
+        }
+        
+        /* Stats Section */
+        .stats {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), #ff5252);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,261.3C672,256,768,224,864,197.3C960,171,1056,149,1152,165.3C1248,181,1344,235,1392,261.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center/cover;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .stat-item {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.4s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .stat-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Events Section */
+        .events {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .event-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        
+        .event-date {
+            background: var(--secondary);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .event-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .event-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .event-info p {
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: linear-gradient(to bottom right, #f0f9ff, #e6f7ff);
+            position: relative;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 4rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            background: white;
+            padding: 1.8rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.4s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+        
+        .contact-icon {
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.5rem;
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #e0e6ed;
+            border-radius: 10px;
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.2);
+            outline: none;
+        }
+        
+        .form-group textarea {
+            height: 160px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 0 1.5rem;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23292F36" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,192C672,181,768,139,864,128C960,117,1056,139,1152,149.3C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>') no-repeat center/cover;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.4s ease;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+        
+        .footer-title {
+            font-size: 1.4rem;
+            margin-bottom: 1.8rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+            color: var(--accent);
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-links a i {
+            color: var(--secondary);
+            transition: transform 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+            padding-left: 5px;
+        }
+        
+        .footer-links a:hover i {
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            font-size: 1rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 0.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero {
+                padding: 5rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto 15px;
+            }
+            
+            .btn-accent {
+                margin-left: 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            nav ul {
+                width: 100%;
+                justify-content: space-around;
+            }
+            
+            nav a {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="logo-text">Khoa <span>Chính trị, Tâm lý & GDTC</span></div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> Trang chủ</a></li>
+                    <li><a href="#"><i class="fas fa-info-circle"></i> Giới thiệu</a></li>
+                    <li><a href="#"><i class="fas fa-book-open"></i> Đào tạo</a></li>
+                    <li><a href="#"><i class="fas fa-flask"></i> Nghiên cứu</a></li>
+                    <li><a href="#"><i class="fas fa-users"></i> Sinh viên</a></li>
+                    <li><a href="#"><i class="fas fa-envelope"></i> Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Đào tạo thế hệ lãnh đạo <span>tương lai</span></h1>
+            <p>Khoa Chính trị, Tâm lý và Giáo dục thể chất - Nơi ươm mầm tri thức, rèn luyện thể chất và phát triển tâm lý toàn diện</p>
+            <div style="margin-top: 3rem;">
+                <a href="#" class="btn">Tìm hiểu thêm</a>
+                <a href="#" class="btn btn-accent">Đăng ký tư vấn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title">Về Khoa của chúng tôi</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Khoa Chính trị, Tâm lý và Giáo dục thể chất là một trong những khoa đa ngành hàng đầu, tập trung vào việc đào tạo nguồn nhân lực chất lượng cao trong các lĩnh vực khoa học chính trị, tâm lý học và giáo dục thể chất.</p>
+                    <p>Với đội ngũ giảng viên giàu kinh nghiệm, cơ sở vật chất hiện đại và chương trình đào tạo tiên tiến, chúng tôi cam kết mang đến cho sinh viên môi trường học tập toàn diện, phát triển cả trí tuệ, tâm hồn và thể chất.</p>
+                    <p>Sứ mệnh của chúng tôi là đào tạo những công dân toàn cầu có năng lực chuyên môn cao, có đạo đức nghề nghiệp và trách nhiệm xã hội, sẵn sàng đóng góp tích cực vào sự phát triển của đất nước và thế giới.</p>
+                    <a href="#" class="btn" style="margin-top: 1.5rem;">Xem thêm</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Khoa Chính trị, Tâm lý và Giáo dục thể chất">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments" id="departments">
+        <div class="container">
+            <h2 class="section-title">Các Bộ Môn</h2>
+            <div class="dept-grid">
+                <div class="dept-card">
+                    <div class="dept-img">
+                        <img src="https://images.unsplash.com/photo-1575320181282-9afab399332c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Chính trị học">
+                    </div>
+                    <div class="dept-content">
+                        <div class="dept-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h3>Chính trị học</h3>
+                        <p>Nghiên cứu các hệ thống chính trị, lý thuyết chính trị và quan hệ quốc tế. Chương trình đào tạo tập trung vào phân tích chính sách, quản trị công và hành chính công.</p>
+                        <a href="#" class="btn">Khám phá</a>
+                    </div>
+                </div>
+                
+                <div class="dept-card">
+                    <div class="dept-img">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-4.0.3&auto=format&fit=crop&w=1999&q=80" alt="Tâm lý học">
+                    </div>
+                    <div class="dept-content">
+                        <div class="dept-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Tâm lý học</h3>
+                        <p>Khám phá tâm trí và hành vi con người. Chương trình đào tạo bao gồm tâm lý học lâm sàng, tâm lý học phát triển, tâm lý học xã hội và tâm lý học nhận thức.</p>
+                        <a href="#" class="btn">Khám phá</a>
+                    </div>
+                </div>
+                
+                <div class="dept-card">
+                    <div class="dept-img">
+                        <img src="https://images.unsplash.com/photo-1536922246289-88c42f957773?ixlib=rb-4.0.3&auto=format&fit=crop&w=2103&q=80" alt="Giáo dục thể chất">
+                    </div>
+                    <div class="dept-content">
+                        <div class="dept-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Giáo dục thể chất</h3>
+                        <p>Đào tạo chuyên gia trong lĩnh vực giáo dục thể chất, huấn luyện thể thao và khoa học thể dục. Chương trình kết hợp lý thuyết và thực hành để phát triển toàn diện.</p>
+                        <a href="#" class="btn">Khám phá</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-text">Năm kinh nghiệm</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">120+</div>
+                    <div class="stat-text">Giảng viên</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">3500+</div>
+                    <div class="stat-text">Sinh viên</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-text">Chương trình đào tạo</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events" id="events">
+        <div class="container">
+            <h2 class="section-title">Sự kiện sắp tới</h2>
+            <div class="event-cards">
+                <div class="event-card">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i> 15/10/2023
+                    </div>
+                    <div class="event-info">
+                        <h3>Hội thảo Quốc tế về Chính trị Đương đại</h3>
+                        <p>Hội thảo với sự tham gia của các chuyên gia hàng đầu thế giới về các vấn đề chính trị toàn cầu.</p>
+                        <a href="#" class="btn">Đăng ký ngay</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i> 22/10/2023
+                    </div>
+                    <div class="event-info">
+                        <h3>Ngày hội Tâm lý học Sức khỏe Tâm thần</h3>
+                        <p>Sự kiện thường niên nâng cao nhận thức về sức khỏe tâm thần và các giải pháp hỗ trợ tâm lý.</p>
+                        <a href="#" class="btn">Đăng ký ngay</a>
+                    </div>
+                </div>
+                
+                <div class="event-card">
+                    <div class="event-date">
+                        <i class="far fa-calendar-alt"></i> 05/11/2023
+                    </div>
+                    <div class="event-info">
+                        <h3>Giải thể thao sinh viên toàn khoa</h3>
+                        <p>Giải đấu thể thao thường niên với nhiều môn thi đấu hấp dẫn: bóng đá, bóng rổ, cầu lông, điền kinh...</p>
+                        <a href="#" class="btn">Đăng ký ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title">Liên hệ với chúng tôi</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Địa chỉ</h3>
+                            <p>Số 123 Đường Đại học, Quận 1, Thành phố Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Điện thoại</h3>
+                            <p>(+84) 28 1234 5678</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>khoachinhtritamlygdtt@university.edu.vn</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Giờ làm việc</h3>
+                            <p>Thứ 2 - Thứ 6: 7:30 - 17:00<br>Thứ 7: 7:30 - 11:30</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Số điện thoại</label>
+                            <input type="tel" id="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nội dung liên hệ</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Gửi thông tin</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-wave"></div>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <div class="footer-logo">Khoa Chính trị, Tâm lý & GDTC</div>
+                    <p>Tiên phong trong đào tạo đa ngành, phát triển con người toàn diện cả trí tuệ, tâm hồn và thể chất.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Liên kết nhanh</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Trang chủ</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Giới thiệu</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Chương trình đào tạo</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Nghiên cứu khoa học</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tuyển sinh</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Các bộ môn</h4>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Chính trị học</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tâm lý học</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Giáo dục thể chất</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Quan hệ quốc tế</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Khoa học thể thao</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Bản tin</h4>
+                    <p>Đăng ký nhận thông tin mới nhất về các sự kiện, chương trình đào tạo và hoạt động của khoa.</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email của bạn" required>
+                        </div>
+                        <button type="submit" class="btn">Đăng ký</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2023 Khoa Chính trị, Tâm lý và Giáo dục thể chất. Tất cả quyền được bảo lưu.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
